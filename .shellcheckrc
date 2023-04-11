@@ -1,0 +1,5 @@
+# Permits shellcheck to follow up and check external sources.
+# More: https://www.shellcheck.net/wiki/Directive#external-sources
+external-sources=true
+
+
