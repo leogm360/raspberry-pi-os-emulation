@@ -20,7 +20,8 @@ No momento o projeto está em fase embrionária, coisas como a imagem do sistema
 
 1. [Iniciando](#1-inciando) 
 2. [Recomendações](#2-recomendações) 
-3. [Referências](#3-referências)
+3. [Recomendações](#3-licença) 
+4. [Referências](#4-referências)
 
 ## 1. Inciando
 
@@ -47,7 +48,7 @@ Elas facilitarão o desenvolvimento utilizando linguagem shell/bash.
 
 No momento o código aqui contido está sobre a [Licença MIT](./LICENSE), porém isso pode ser mudado no futuro.
 
-## 3. Referências
+## 4. Referências
 
 1. [Emulando Raspberry Parte 1](https://www.youtube.com/watch?v=H4yn5fXkJvs)
 2. [Emulando Raspberry Parte 2](https://www.youtube.com/watch?v=TfhH9sRv9LI)
