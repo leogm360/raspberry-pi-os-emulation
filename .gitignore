@@ -22,5 +22,8 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
-### Temporary Files ###
-/tmp
+### Distibrution Files ###
+/dist
+
+### Kernel Files ###
+/kernel

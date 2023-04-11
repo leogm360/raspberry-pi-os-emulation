@@ -8,6 +8,8 @@
 
 - [] Verificar geração de arquivo ptb após compilação do kernel.
 
+- [] Transformar opções do comando de emulação em variáveis.
+
 - [] Separar execução do código em módulos compostos de funções, com padrão de
 namespaces.
 

@@ -1,4 +1,4 @@
-# Permits shellcheck to fallow up and check for external sources.
+# Permits shellcheck to follow up and check external sources.
 # More: https://www.shellcheck.net/wiki/Directive#external-sources
 external-sources=true
 

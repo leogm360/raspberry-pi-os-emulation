@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # >>>>>>>>>>>>>>>>>>>>>>>> HEADER >>>>>>>>>>>>>>>>>>>>>>>>
-# Nome      : install.sh
+# Nome      : emulate.sh
 # Site      : https://github.com/leogm360/raspberry-pi-os-emulation
 # Autor     : Leonardo Moraes <leogm360@gmail.com>
 # Manutenção: Leonardo Moraes <leogm360@gmail.com>
@@ -35,16 +35,34 @@
 # - COMMANDS_DEPENDENCIES.
 source './src/utils/constants.sh'
 
-# Verifica se os comandos necessários já estão instalados e instala eles, caso
-# necessário.
-for command_dependency in "${COMMANDS_DEPENDENCIES[@]}"; do
-    if [ ! "$(command -v "$command_dependency")" ]; then
-        sudo apt-get install "$command_dependency" -y
-    fi
+# Instala as dependências necessárias
+
+echo -e "\nChecking for dependencies"
+
+for dep in "${DEPENDENCIES[@]}"; do
+    sudo apt-get install "$dep" -y
 done
 
-# Verifica se o diretório tmp existe na raiz do projeto e cria ele, caso
+echo -e "\nCrecating dist\n"
+
+# Verifica se o diretório dist existe e cria ele, caso
 # necessário.
-if [ ! -d "./tmp" ]; then
-    mkdir ./tmp
+if [ ! -d "./dist" ]; then
+    mkdir ./dist
 fi
+
+echo -e "\nDownloading Raspberry Pi OS\n"
+
+curl -LO --output-dir ./dist "$RASPBERRY_PI_OS_LITE"
+
+echo -e "\nDownloading QEMU Kernel\n"
+
+curl -LO --output-dir ./dist "$QEMU_RPI_KERNEL"
+
+echo -e "\nDownloading QEMU DTB\n"
+
+curl -LO --output-dir ./dist "$QEMU_RPI_KERNEL_DTB"
+
+echo -e "\nUnpacking\n"
+
+xz -dkv ./dist/*.img.xz
